@@ -1,4 +1,4 @@
-# Todo list answers
+# Todo list app test plan
 
 ## Getting started
 - The project (available at: https://github.com/flegrisgreen/cucmber-selenium/tree/master) runs a automated frontend test.
@@ -9,13 +9,13 @@
 ### Run Maven project
 - Navigate to /src/test/java/stepDefs
 - Run 'mvn runner.java'
-- Cucumber-selenium test report available at /target/report/cucumber.html
+- Cucumber-selenium test report available at cucumber-selenium/target/report/cucumber.html
 
 ## Maven project results
-- The lastest report generated on developer machine is available at /cucumber_selenium_test_results.html
+- The lastest report generated on developer machine is available at cucumber-selenium/cucumber_selenium_test_results.html
 
 ## Gherkin feature files explaining the scenarios that test the requirements of the todo app
-- All the .feature Gherkin files have been assembled below. The orginal files are located at (\src\test\java\Features)
+- All the .feature Gherkin files have been assembled below. The orginal files are located at (cucumber-selenium\src\test\java\Features)
 
 Feature: All .feature files together in one Gherkin file
 
