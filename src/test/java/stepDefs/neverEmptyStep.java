@@ -6,16 +6,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.lang.*;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
 
-
-public class addTodoStep {
-
+public class neverEmptyStep {
     WebDriver driver = null;
 
-    @Given("^A todo item is entered into the submission block$")
-    public void addItem(){
-
+    @Given("^empty submission or update$")
+    public void tryEmpty(){
         //Locate chrome driver
         String path = System.getProperty("user.dir");
         System.setProperty("webdriver.chrome.driver", path+"/src/test/resources/drivers/chromedriver.exe");
@@ -27,24 +26,32 @@ public class addTodoStep {
 
         //Open chrome
         driver.get("localhost:8080");
-
-        //Write a todo in the submission block
-        driver.findElement(By.name("newtodo")).sendKeys("Newly added todo");
     }
 
-    @When("^submit is clicked$")
+    @When("^submit button is clicked$")
     public void clickSubmit(){
-
-        //Click the submit button to add the todo item
+        //click submit while todo item is empty
         driver.findElement(By.name("newtodo")).sendKeys(Keys.ENTER);
+
+        //Update the first todo item to be empty
+        driver.findElement(By.id("edit-submit-0")).sendKeys((Keys.ENTER));
     }
 
-    @Then("^todo item should be added to the list$")
-    public void findTodo() throws Exception {
+    @Then("^submission should not be saved or displayed$")
+    public void checkForEmpty() throws Exception {
 
-        //Check the length of the todo list. If longer than 0 items were added
+        //Check list for empty entries
+        List<String> todos = new ArrayList<String>();
         int list_len = driver.findElements(By.className("edit-todo-form")).size();
-        if(list_len>0){System.out.print("List is not empty");}
-        else {throw new Exception("List is empty");}
+        for(int i=0; i<list_len;i++){
+            todos.add(driver.findElement(By.id("span-todo-"+i)).getText());
+        }
+        System.out.print(todos);
+
+        //If none empty pass, if empty entry exists throw exception
+        String empty = "";
+        for (String todoitem: todos) {
+            if(todoitem.equals(empty)){throw new Exception("Empty todo item exists");}
+        }
     }
 }

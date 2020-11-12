@@ -6,9 +6,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.lang.*;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.ArrayList;
+
 
 public class editStep {
     WebDriver driver = null;
@@ -39,12 +38,14 @@ public class editStep {
 
     @When("^user enters update in form$")
     public void enterEdit(){
+
         //enter updated todo item in first todo item's form
         driver.findElement(By.id("edittodo-0")).sendKeys("Newly edited todo");
     }
 
     @And("^clicks Update$")
     public void clickUpdate(){
+
         //enter updated todo item in first todo item's form
         driver.findElement(By.id("edittodo-0")).sendKeys(Keys.ENTER);
     }
@@ -54,8 +55,9 @@ public class editStep {
 
         // Check that first item in list was edited
         String editContent = driver.findElement(By.id("span-todo-0")).getText();
+        String testText = "Newly edited todo";
         System.out.println(editContent);
-        if(editContent=="Newly edited todo"){System.out.print("Item was edit");}
+        if(editContent.equals(testText)){System.out.print("Item was edited");}
         else {throw new Exception("Item wasn't edited right");}
     }
 }
