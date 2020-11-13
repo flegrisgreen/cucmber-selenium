@@ -17,6 +17,10 @@
 ## Manual testing results
 Note that all requirements were tested manually as well to verify the automated test findings.
 1. The docker requirement could not be tested due to developer system limitations, i.e. docker could not be downloaded onto the development machine because the version of windows that is being used is too old. See the error statement at "cucumber-selenium/docker-install-error.png"
-2. Requirement 4, todo items should not be empty, did not show the expected behaviour. Expected behaviour: no todo item that is empty will be saved or displayed when a new, empty todo item is submitted or when an existing todo item is updated to be empty. Actual behaviour: a new, empty todo item is not saved or displayed when submitted, but if an existing todo item is updated to be empty it is saved and displayed. Recreation steps: add a check to verify that an existing todo item is not updated to be empty. If a todo item is updated while empty, do not except the change and display a help/warning message.
+2. Requirement 4, todo items should not be empty, did not show the expected behaviour. Expected behaviour: no todo item that is empty will be saved or displayed when a new, empty todo item is submitted or when an existing todo item is updated to be empty. Actual behaviour: a new, empty todo item is not saved or displayed when submitted, but if an existing todo item is updated to be empty it is saved and displayed. Recreation steps: add a check to verify that an existing todo item is not updated while update form is empty. If a todo item is updated while empty, do not except the change and display a help/warning message.
 
 
+## Recommendations for future testing
+- The app must still be tested to verify that it can run within a docker image. (Do this in a virtual machine since the developer machine cannot run docker.)
+- Create scenario outlines and use examples to test various cases within one feature test. E.g. distinguish between new todo item entry and updated entry for requirement 4.
+- Perform tests using a remote device (e.g. virtual machine to check that all dependencies are included in working path and that software is compatible with target platform)

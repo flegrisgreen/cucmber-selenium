@@ -12,4 +12,4 @@
 1. Launch todo app within the Cordova project
 2. Perform manual testing of the todo app for requirements 1-7 according to the scenarios listed in the test plan (available at: "cucumber-selenium/TodolistApp_answers_test_plan.md"). This manual test is still within the development environment.
 3. Perform automated testing, within the development environment, where possible and prioritising key functionality.
-4. Perform manual testing using a remote device that uses the platform being developed for.
+4. Perform manual testing using a remote device that uses the platform being developed for. Again, perform tests according to the scenarios listed in the test plan.

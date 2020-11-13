@@ -24,7 +24,7 @@ Feature: All .feature files together in one Gherkin file
 	Scenario: Application can or cannot deploy in docker
 		Given Docker container image
 		When app is launched in docker image
-		Then todolist page should be available at localhost:8081
+		Then todolist page should be available at http://localhost:8081
 
 
 	Scenario: Multiple users can use the app simultaneously or not
