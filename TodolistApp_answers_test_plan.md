@@ -2,20 +2,22 @@
 
 ## Getting started
 - The project (available at: https://github.com/flegrisgreen/cucmber-selenium/tree/master) runs a automated frontend test.
-- Install Apache Maven (https://maven.apache.org/download.cgi)
-- In root folder, run 'mvn install'
-- Run the todo app (hosting locally on port 8080)
+- Install chrome browser if not already on the machine (https://www.google.com/chrome/).
+- Install Apache Maven (https://maven.apache.org/download.cgi).
+- In root folder, run 'mvn install'.
+- Run the todo app (hosting locally on port 8080).
+- The git repository name is "cucumber-selenium" and it is the first item in every directory below.
 
 ### Run Maven project
-- Navigate to /src/test/java/stepDefs
-- Run 'mvn runner.java'
-- Cucumber-selenium test report available at cucumber-selenium/target/report/cucumber.html
+- Navigate to "cucumber-selenium/src/test/java/stepDefs".
+- Run 'mvn runner.java'.
+- Cucumber-selenium test report available at "cucumber-selenium/target/report/cucumber.html"
 
 ## Maven project results
-- The lastest report generated on developer machine is available at cucumber-selenium/cucumber_selenium_test_results.html
+- The latest report generated on developer machine is available at "cucumber-selenium/cucumber_selenium_test_results.html".
 
-## Gherkin feature files explaining the scenarios that test the requirements of the todo app
-- All the .feature Gherkin files have been assembled below. The orginal files are located at (cucumber-selenium\src\test\java\Features)
+## Gherkin .feature files explaining the scenarios of the test cases
+- All the .feature Gherkin files have been assembled below. The original files are located at "cucumber-selenium\src\test\java\Features".
 
 Feature: All .feature files together in one Gherkin file
 
