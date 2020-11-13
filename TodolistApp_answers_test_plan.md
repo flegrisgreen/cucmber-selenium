@@ -17,7 +17,7 @@
 - The latest report generated on developer machine is available at "cucumber-selenium/cucumber_selenium_test_results.html".
 
 ## Gherkin .feature files explaining the scenarios of the test cases
-- All the .feature Gherkin files have been assembled below. The original files are located at "cucumber-selenium\src\test\java\Features".
+- All the .feature Gherkin files have been assembled below. The original files are located at "https://github.com/flegrisgreen/cucmber-selenium/tree/master/src/test/java/Features".
 
 Feature: All .feature files together in one Gherkin file
 
